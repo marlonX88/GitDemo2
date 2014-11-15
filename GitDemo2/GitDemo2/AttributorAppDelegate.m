@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //CGRect screenBounds = [ [UIScreen mainScreen] bounds];
+    //CGRect screenBounds =  [ [UIScreen mainScreen] applicationFrame];
+    CGRect screenBounds =  [[UIApplication sharedApplication] statusBarFrame];
+    NSLog(@"the rect is %f,%f,%f,%f",screenBounds.origin.x,screenBounds.origin.y,screenBounds.size.width,screenBounds.size.height);
+    
     return YES;
 }
 							
