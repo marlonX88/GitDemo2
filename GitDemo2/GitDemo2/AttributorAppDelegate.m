@@ -15,8 +15,13 @@
     // Override point for customization after application launch.
     //CGRect screenBounds = [ [UIScreen mainScreen] bounds];
     //CGRect screenBounds =  [ [UIScreen mainScreen] applicationFrame];
-    CGRect screenBounds =  [[UIApplication sharedApplication] statusBarFrame];
-    NSLog(@"the rect is %f,%f,%f,%f",screenBounds.origin.x,screenBounds.origin.y,screenBounds.size.width,screenBounds.size.height);
+//    CGRect screenBounds =  [[UIApplication sharedApplication] statusBarFrame];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    CGRect CGone = CGRectMake(0, 0, 320, 100);
+    UIView *vGone = [[UIView alloc] initWithFrame:CGone];
+    vGone.backgroundColor = [UIColor blackColor];
+    [self.window addSubview:vGone];
+    
     
     return YES;
 }
